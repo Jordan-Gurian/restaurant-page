@@ -1,10 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const butt = 5;
 
 module.exports = {
     mode: 'development',
-    entry: './src/index.js',
+    entry: {
+        index: './src/index.js',
+    },
     devtool: 'inline-source-map',
+    devServer: {
+        static: './dist',
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Fake Restaurant',
@@ -32,4 +38,7 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
-}
+    optimization: {
+        runtimeChunk: 'single',
+    },
+};

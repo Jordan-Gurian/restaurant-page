@@ -1,0 +1,76 @@
+:root {
+    --font-all: 'Times New Roman', Times, serif;
+    --egg-yellow: #F3D925;
+    --lavendar: #B5C6E0;
+    --standard-gap: 10px;
+    --standard-padding: 20px;
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-all);
+}
+
+html {
+    background: linear-gradient(rgba(255,255,255,.75), rgba(255,255,255,.75)), url('./egg-background.png');
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--standard-gap);
+    height: 100vh;
+}
+
+.tabs {
+    padding: var(--standard-padding);
+    background-color: var(--lavendar);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: var(--standard-gap);
+}
+
+.tabs > button {
+    border: 0;
+    border-radius: 8px;
+    height: 60px;
+    width: 100px;
+    font-size: 2rem;
+    background-color: var(--egg-yellow);
+
+}
+
+.tabs > button:hover {
+    cursor: pointer;
+}
+
+#content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    max-width: 75%;
+    gap: var(--standard-gap);
+    padding: var(--standard-padding);
+    font-size: 1.5rem;
+}
+
+h1 {
+    text-align: center;
+}
+
+.home-body {
+    text-align: justify;
+    font-weight: bold;
+}
+
+.home-image {
+    width: min(100%, 600px);
+}
