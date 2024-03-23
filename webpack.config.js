@@ -1,6 +1,5 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const butt = 5;
 
 module.exports = {
     mode: 'development',

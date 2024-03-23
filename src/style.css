@@ -1,6 +1,7 @@
 :root {
     --font-all: 'Times New Roman', Times, serif;
     --egg-yellow: #F3D925;
+    --dark-egg-yellow: #BAA102;
     --lavendar: #B5C6E0;
     --standard-gap: 10px;
     --standard-padding: 20px;
@@ -22,7 +23,6 @@ html {
 body {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     gap: var(--standard-gap);
     height: 100vh;
@@ -41,20 +41,20 @@ body {
     border: 0;
     border-radius: 8px;
     height: 60px;
-    width: 100px;
+    width: 140px;
     font-size: 2rem;
     background-color: var(--egg-yellow);
-
+    box-shadow: 2px 2px var(--dark-egg-yellow);
 }
 
 .tabs > button:hover {
     cursor: pointer;
+    opacity: .5;
 }
 
 #content {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-content: center;
     max-width: 75%;
     gap: var(--standard-gap);
@@ -73,4 +73,7 @@ h1 {
 
 .home-image {
     width: min(100%, 600px);
+    align-self: center;
+    box-shadow: var(--standard-gap) var(--standard-gap) var(--standard-gap) var(--lavendar);
+    border-radius: 20px;
 }
