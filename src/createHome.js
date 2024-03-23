@@ -1,19 +1,29 @@
 import Eggs from './eggs-benedict.jpeg';
+import deleteContent from './deleteContent.js';
 
-export default function createContent() {
-    const element = document.querySelector('#content');
+export default function createHome() {
+    deleteContent();
+
+    const content = document.querySelector('#content');
 
     const eggHome = new Image();
     eggHome.src = Eggs;
     eggHome.alt = 'food';
     eggHome.classList.add('home-image');
 
-    element.appendChild(eggHome);
+    content.appendChild(eggHome);
+
+    const caption = document.createElement('div');
+    caption.textContent = `Photo by DOTDASH MEREDITH FOOD STUDIOS `;
+    caption.classList.add('caption');
+    
+    content.appendChild(caption);
+
 
     const headHome = document.createElement('h1');
     headHome.textContent = 'Welcome to Egg House!';
 
-    element.appendChild(headHome);
+    content.appendChild(headHome);
 
     const bodyHome = document.createElement('p');
     bodyHome.textContent = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex unde eos animi nesciunt assumenda a omnis et quia. 
@@ -21,7 +31,7 @@ export default function createContent() {
     Nobis vitae fugit harum qui quas, atque, vero voluptate quos officia corporis pariatur culpa iusto quia quaerat et ea, esse perspiciatis! Perferendis.`
     bodyHome.classList.add('home-body')
 
-    element.appendChild(bodyHome)
+    content.appendChild(bodyHome)
 
-    return element
+    return content
 }

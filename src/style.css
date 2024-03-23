@@ -56,10 +56,14 @@ body {
     display: flex;
     flex-direction: column;
     align-content: center;
-    max-width: 75%;
+    width: 800px;
     gap: var(--standard-gap);
     padding: var(--standard-padding);
     font-size: 1.5rem;
+    background-color: var(--egg-yellow);
+    border-radius: var(--standard-gap);
+    box-shadow: var(--standard-gap) var(--standard-gap) var(--standard-gap) var(--lavendar);
+
 }
 
 h1 {
@@ -74,6 +78,12 @@ h1 {
 .home-image {
     width: min(100%, 600px);
     align-self: center;
-    box-shadow: var(--standard-gap) var(--standard-gap) var(--standard-gap) var(--lavendar);
+    box-shadow: var(--standard-gap) var(--standard-gap) var(--standard-gap) var(--dark-egg-yellow);
     border-radius: 20px;
+}
+
+.caption {
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
 }

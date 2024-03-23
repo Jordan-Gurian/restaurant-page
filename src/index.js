@@ -1,5 +1,16 @@
 import './style.css';
-import createContent from  './createContent.js';
+import createHome from  './createHome.js';
+import createMenu from './createMenu.js';
+import createContact from './createContact.js';
 
 
-createContent();
+createHome();
+
+const homeButton = document.querySelector('.home');
+homeButton.addEventListener('click', () => createHome())
+
+const menuButton = document.querySelector('.menu');
+menuButton.addEventListener('click', () => createMenu())
+
+const contactButton = document.querySelector('.contact');
+contactButton.addEventListener('click', () => createContact())
