@@ -1,16 +1,17 @@
 const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    mode: 'development',
     entry: {
         index: './src/index.js',
     },
-    devtool: 'inline-source-map',
-    devServer: {
-        static: './dist',
-    },
     plugins: [
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css",
+        }),
         new HtmlWebpackPlugin({
             title: 'Fake Restaurant',
             template: './src/index.html',
@@ -20,7 +21,7 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -39,5 +40,6 @@ module.exports = {
     },
     optimization: {
         runtimeChunk: 'single',
+        minimizer: [ new CssMinimizerPlugin() ],
     },
 };
